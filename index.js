@@ -10,8 +10,14 @@ class UsbNet {
         // Initialize HAP service
         this.log = log;
         this.name = config.name;
-        this.service = new Service.Lightbulb(this.name);
-        this.service
+        const accessoryInformation = new Service.AccessoryInformation();
+        const lightbulb = new Service.Lightbulb(this.name);
+        this.services = [accessoryInformation, lightbulb];
+        accessoryInformation
+            .setCharacteristic(Characteristic.Manufacturer, 'USB NET POWER')
+            .setCharacteristic(Characteristic.Model, '8800')
+            .setCharacteristic(Characteristic.SerialNumber, 'none');
+        lightbulb
             .getCharacteristic(Characteristic.On)
             .on('set', (value, callback) => {
                 log(`Setting accessory state to ${value}`);
@@ -45,15 +51,15 @@ class UsbNet {
     }
 
     getServices() {
-        return [this.service];
+        return this.services;
     }
 }
 
 // UsbNet Homebridge plugin
 function UsbNetPlugin(homebridge) {
     console.log(`homebridge API version: ${homebridge.version}`);
-    Service = homebridge.hap.service;
-    Characteristic = homebridge.hap.service;
+    Service = homebridge.hap.Service;
+    Characteristic = homebridge.hap.Characteristic;
     homebridge.registerAccessory('homebridge-plugin-usbnet', 'UsbNet', UsbNet);
 }
 module.exports = UsbNetPlugin;

@@ -5,6 +5,7 @@
   "repository": "git@github.com:ScottBouloutian/homebridge-plugin-usbnet.git",
   "author": "Scott Bouloutian <ScottBouloutian@gmail.com>",
   "license": "MIT",
+  "keywords": ["homebridge-plugin"],
   "engines": {
     "node": "6.10.0",
     "homebridge": "^0.4.16"
