@@ -1,0 +1,22 @@
+{
+  "name": "homebridge-plugin-usbnet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ScottBouloutian/homebridge-plugin-usbnet.git",
+  "author": "Scott Bouloutian <ScottBouloutian@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "6.10.0",
+    "homebridge": "^0.4.16"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "usb": "^1.2.0"
+  }
+}
