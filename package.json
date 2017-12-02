@@ -1,13 +1,13 @@
 {
   "name": "homebridge-plugin-usbnet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "git@github.com:ScottBouloutian/homebridge-plugin-usbnet.git",
   "author": "Scott Bouloutian <ScottBouloutian@gmail.com>",
   "license": "MIT",
   "keywords": ["homebridge-plugin"],
   "engines": {
-    "node": "6.10.0",
+    "node": "^6.10.0",
     "homebridge": "^0.4.16"
   },
   "devDependencies": {
